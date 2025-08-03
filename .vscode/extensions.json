@@ -1,3 +1,7 @@
 {
-  "recommendations": ["Vue.volar", "streetsidesoftware.code-spell-checker"]
+  "recommendations": [
+    "Vue.volar",
+    "streetsidesoftware.code-spell-checker",
+    "bradlc.vscode-tailwindcss"
+  ]
 }

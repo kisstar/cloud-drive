@@ -20,6 +20,7 @@
     "drive"
   ],
   "scripts": {
+    "dev": "pnpm -F @cloud-drive/main-app run dev",
     "lint": "eslint",
     "prepare": "simple-git-hooks"
   },

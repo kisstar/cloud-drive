@@ -6,3 +6,19 @@ packages:
   - system/*
   - host/*
   - platform/*
+
+catalog:
+  '@tailwindcss/vite': ^4.1.11
+  '@vitejs/plugin-vue': ^6.0.0
+  '@vue/tsconfig': ^0.7.0
+  '@vueuse/core': ^13.6.0
+  less: ^4.4.0
+  pinia: ^3.0.3
+  tailwindcss: ^4.1.11
+  tdesign-vue-next: ^1.15.2
+  typescript: ~5.8.3
+  vite: ^7.0.4
+  vite-plugin-checker: ^0.10.2
+  vue: ^3.5.17
+  vue-router: ^4.5.1
+  vue-tsc: ^2.2.12
