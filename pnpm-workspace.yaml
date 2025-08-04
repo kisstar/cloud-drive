@@ -12,6 +12,7 @@ catalog:
   '@vitejs/plugin-vue': ^6.0.0
   '@vue/tsconfig': ^0.7.0
   '@vueuse/core': ^13.6.0
+  es-toolkit: ^1.39.8
   less: ^4.4.0
   pinia: ^3.0.3
   tailwindcss: ^4.1.11
@@ -20,5 +21,6 @@ catalog:
   vite: ^7.0.4
   vite-plugin-checker: ^0.10.2
   vue: ^3.5.17
+  vue-i18n: ^11.1.11
   vue-router: ^4.5.1
   vue-tsc: ^2.2.12

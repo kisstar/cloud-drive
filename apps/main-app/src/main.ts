@@ -1,11 +1,13 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import App from './App.vue'
+import App from '@/App.vue'
+import { i18n } from '@/locales'
+import { pinia } from '@/store'
 // import global design variables
-import 'tdesign-vue-next/es/style/index.css';
-import './styles/index.css'
+import 'tdesign-vue-next/es/style/index.css'
+import '@/styles/index.css'
 
-const pinia = createPinia()
 const app = createApp(App)
 
-app.use(pinia).mount('#app')
+app.use(pinia)
+app.use(i18n)
+app.mount('#app')
