@@ -3,6 +3,7 @@ import type { I18nOptions } from 'vue-i18n'
 import { useLocalStorage, usePreferredLanguages } from '@vueuse/core'
 import { computed } from 'vue'
 import { createI18n } from 'vue-i18n'
+import { DEFAULT_LANG } from '@/config/app'
 import { APP_LOCALE_KEY } from '@/constants/storage-key'
 
 type I18nMessages = I18nOptions['messages']
@@ -64,13 +65,11 @@ function generateLangModuleMap() {
 generateLangModuleMap()
 const i18n = createI18n({
   legacy: false,
-  locale: useLocalStorage(APP_LOCALE_KEY, 'zh_CN').value || languages.value[0] || 'zh_CN',
-  fallbackLocale: 'zh_CN',
+  locale: useLocalStorage(APP_LOCALE_KEY, DEFAULT_LANG).value || languages.value[0] || DEFAULT_LANG,
+  fallbackLocale: DEFAULT_LANG,
   messages: importMessages.value,
   globalInjection: true,
 })
-
-export type Lang = 'zh_CN' | 'en_US'
 
 export const t = i18n.global.t
 

@@ -15,6 +15,7 @@ catalog:
   es-toolkit: ^1.39.8
   less: ^4.4.0
   pinia: ^3.0.3
+  pinia-plugin-persistedstate: ^4.4.1
   tailwindcss: ^4.1.11
   tdesign-vue-next: ^1.15.2
   typescript: ~5.8.3

@@ -2,9 +2,11 @@
 import { Button, ConfigProvider, Input } from 'tdesign-vue-next'
 import { ref } from 'vue'
 import { useLocale } from '@/locales/useLocale'
+import { useSettingStore } from '@/store/setting'
 
-const msg = ref('hello world')
+const msg = ref('Dark theme')
 const { getComponentsLocale } = useLocale()
+const settingStore = useSettingStore()
 </script>
 
 <template>
@@ -12,8 +14,11 @@ const { getComponentsLocale } = useLocale()
     <!-- TODO: remove test content -->
     <div class="p-2 bg-white dark:bg-black">
       <Input />
-      <Button theme="primary">
+      <Button @click="settingStore.changeThemeMode('dark')">
         {{ msg }}
+      </Button>
+      <Button theme="default" @click="settingStore.changeThemeMode('light')">
+        Light theme
       </Button>
     </div>
   </ConfigProvider>
