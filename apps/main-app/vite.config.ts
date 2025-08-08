@@ -15,7 +15,9 @@ export default defineConfig({
     vue(),
     tailwindcss(),
     checker({
-      typescript: true,
+      vueTsc: {
+        tsconfigPath: 'apps/main-app/tsconfig.app.json',
+      },
     }),
   ],
 })

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "description": "A cloud manager program that supports online consumption of files.",
   "author": "Kisstar <dwh.chn@foxmail.com>",
   "license": "Apache 2.0",
@@ -19,10 +19,22 @@
     "cloud",
     "drive"
   ],
+  "engines": {
+    "node": ">=24.1.0",
+    "pnpm": ">=10.14.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.1.0",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "commit": "git-cz",
     "dev": "pnpm -F @cloud-drive/main-app run dev",
     "lint": "eslint",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky"
   },
   "devDependencies": {
