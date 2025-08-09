@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ConfigProvider } from 'tdesign-vue-next'
 import AppLayout from '@/layout/index.vue'
 import { useLocale } from '@/locales/useLocale'
 import { useSettingStore } from '@/store/setting'
@@ -9,9 +8,9 @@ const settingStore = useSettingStore()
 </script>
 
 <template>
-  <ConfigProvider :global-config="getComponentsLocale">
+  <t-config-provider :global-config="getComponentsLocale">
     <AppLayout :mode="settingStore.layoutMode" />
-  </ConfigProvider>
+  </t-config-provider>
 </template>
 
 <style scoped></style>

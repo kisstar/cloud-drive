@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { LayoutMode } from '@/types/setting'
-import { Aside, Content, Footer, Header, Layout } from 'tdesign-vue-next'
 
 interface LayoutProps {
   mode: LayoutMode
@@ -10,32 +9,32 @@ defineProps<LayoutProps>()
 </script>
 
 <template>
-  <!-- Vertical layout, top navigation -->
-  <Layout v-if="mode === 'TopNav'">
-    <Header>Header</Header>
-    <Content>Content</Content>
-    <Footer>Footer</Footer>
-  </Layout>
+  <!-- Vertical t-layout, top navigation -->
+  <t-layout v-if="mode === 'TopNav'">
+    <t-header>t-header</t-header>
+    <t-content>t-content</t-content>
+    <t-footer>t-footer</t-footer>
+  </t-layout>
 
-  <!-- Left and right layout, side navigation -->
-  <Layout v-if="mode === 'SideNav'">
-    <Aside>Aside</Aside>
-    <Layout>
-      <!-- <Header>Header</Header> -->
-      <Content>Content</Content>
-      <Footer>Footer</Footer>
-    </Layout>
-  </Layout>
+  <!-- Left and right t-layout, side navigation -->
+  <t-layout v-if="mode === 'SideNav'">
+    <t-aside>Aside</t-aside>
+    <t-layout>
+      <!-- <t-header>t-header</t-header> -->
+      <t-content>t-content</t-content>
+      <t-footer>t-footer</t-footer>
+    </t-layout>
+  </t-layout>
 
-  <!-- Combined navigation layout -->
-  <Layout v-else>
-    <Header>
-      <Header />
-    </Header>
-    <Layout>
-      <Aside>Aside</Aside>
-      <Content>Content</Content>
-    </Layout>
-    <Footer>Footer</Footer>
-  </Layout>
+  <!-- Combined navigation t-layout -->
+  <t-layout v-else>
+    <t-header>
+      <t-header />
+    </t-header>
+    <t-layout>
+      <t-aside>Aside</t-aside>
+      <t-content>t-content</t-content>
+    </t-layout>
+    <t-footer>t-footer</t-footer>
+  </t-layout>
 </template>

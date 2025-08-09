@@ -1,3 +1,4 @@
+import TDesign from 'tdesign-vue-next'
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import { i18n } from '@/locales'
@@ -10,4 +11,5 @@ const app = createApp(App)
 
 app.use(pinia)
 app.use(i18n)
+app.use(TDesign)
 app.mount('#app')
