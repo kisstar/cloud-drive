@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import type { HeaderProps } from '@/layout/header.vue'
 import type { LayoutMode } from '@/types/setting'
+import AppHeader from '@/layout/header.vue'
 
 interface LayoutProps {
   mode: LayoutMode
+  header?: HeaderProps
 }
 
 defineProps<LayoutProps>()
@@ -29,7 +32,7 @@ defineProps<LayoutProps>()
   <!-- Combined navigation t-layout -->
   <t-layout v-else>
     <t-header>
-      <t-header />
+      <AppHeader :menu-items="header?.menuItems" :left-operations="header?.leftOperations" :right-operations="header?.rightOperations" />
     </t-header>
     <t-layout>
       <t-aside>Aside</t-aside>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { HEADER_CONFIG } from '@/config/layout'
 import AppLayout from '@/layout/index.vue'
 import { useLocale } from '@/locales/useLocale'
 import { useSettingStore } from '@/store/setting'
@@ -9,7 +10,7 @@ const settingStore = useSettingStore()
 
 <template>
   <t-config-provider :global-config="getComponentsLocale">
-    <AppLayout :mode="settingStore.layoutMode" />
+    <AppLayout :mode="settingStore.layoutMode" :header="HEADER_CONFIG" />
   </t-config-provider>
 </template>
 
