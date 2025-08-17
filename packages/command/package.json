@@ -1,0 +1,24 @@
+{
+  "name": "@cloud-drive/command",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/types/main.d.ts",
+      "module": "./dist/main.es.js",
+      "import": "./dist/main.es.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/main.es.js",
+  "module": "./dist/main.es.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}
