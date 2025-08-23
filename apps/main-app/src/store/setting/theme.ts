@@ -1,10 +1,15 @@
 import type { ThemeMode } from '@/types/setting'
+import { useDark, usePreferredDark, useToggle } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { DEFAULT_THEME } from '@/config/app'
 
 interface ThemeState {
   themeMode: ThemeMode
 }
+
+const isPreferredDark = usePreferredDark()
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 export const useThemeStore = defineStore('theme', {
   state: (): ThemeState => {
@@ -13,11 +18,15 @@ export const useThemeStore = defineStore('theme', {
     }
   },
   getters: {
-    currentThemeMode: (state): ThemeMode => {
-      if (state.themeMode === 'auto') {
-        const media = window.matchMedia('(prefers-color-scheme:dark)')
-
-        if (media.matches) {
+    currentThemeMode(state) {
+      return state.themeMode
+    },
+    /**
+     * `effectiveThemeMode` refers to the actual theme mode, while `currentThemeMode` is used for display
+     */
+    effectiveThemeMode(state): Exclude<ThemeMode, 'system'> {
+      if (state.themeMode === 'system') {
+        if (isPreferredDark.value) {
           return 'dark'
         }
 
@@ -26,19 +35,25 @@ export const useThemeStore = defineStore('theme', {
 
       return state.themeMode
     },
-    isDarkMode: (state) => {
-      return state.themeMode === 'dark'
+    isDarkMode(): boolean {
+      return this.effectiveThemeMode === 'dark'
     },
   },
   actions: {
     async changeThemeMode(mode: ThemeMode) {
       this.themeMode = mode
-      document.documentElement.setAttribute('theme-mode', this.isDarkMode ? 'dark' : '')
+
+      if (this.isDarkMode !== isDark.value) {
+        toggleDark()
+      }
     },
   },
   persist: {
+    key: 'cloud-drive:theme',
     afterHydrate: ({ store }) => {
-      store.changeThemeMode(store.currentThemeMode)
+      if (store.isDarkMode !== isDark.value) {
+        toggleDark()
+      }
     },
   },
 })

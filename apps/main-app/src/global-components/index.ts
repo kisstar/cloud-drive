@@ -3,9 +3,9 @@ import type { App, Component } from 'vue'
 const componentsInfo = import.meta.glob<Record<string, Component>>('./**/index.ts', { eager: true })
 
 /**
- * 注册全局组件
- * 1. 通过 import.meta.glob 自动导入 '.\/**\/index.ts' 下的所有组件
- * 2. 遍历组件信息并注册到 Vue 应用中
+ * Register global components
+ * 1. Automatically import all components under '.\/**\/index.ts' via import.meta.glob
+ * 2. Traverse component info and register them to Vue application
  */
 export const globalComponents = {
   install(app: App) {

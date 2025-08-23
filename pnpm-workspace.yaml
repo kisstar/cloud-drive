@@ -12,12 +12,12 @@ catalog:
   '@vitejs/plugin-vue': ^6.0.0
   '@vue/tsconfig': ^0.7.0
   '@vueuse/core': ^13.6.0
+  element-plus: ^2.11.1
   es-toolkit: ^1.39.8
   less: ^4.4.0
   pinia: ^3.0.3
   pinia-plugin-persistedstate: ^4.4.1
   tailwindcss: ^4.1.11
-  tdesign-vue-next: ^1.15.2
   typescript: ~5.8.3
   vite: ^7.0.4
   vite-plugin-checker: ^0.10.2

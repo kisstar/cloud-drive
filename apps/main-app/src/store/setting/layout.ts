@@ -23,6 +23,7 @@ export const useLayoutStore = defineStore('layout', {
     },
   },
   persist: {
+    key: 'cloud-drive:layout',
     afterHydrate: ({ store }) => {
       store.changeLayoutMode(store.currentLayout)
     },

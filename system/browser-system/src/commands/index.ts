@@ -9,8 +9,8 @@ interface CommandInfo {
 const commandsInfo = import.meta.glob<CommandInfo>(['./*.ts', '!./index.ts'], { eager: true })
 
 /**
- * 注册命令
- * @param ctx 上下文环境，用于注册命令到系统中
+ * Register commands
+ * @param ctx Context environment for registering commands to the system
  */
 function registerCommands(ctx: Context) {
   Object.keys(commandsInfo).forEach((moduleFile) => {

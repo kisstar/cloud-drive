@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { HEADER_CONFIG } from '@/config/layout'
 import AppLayout from '@/layout/index.vue'
-import { useLocale } from '@/locales/useLocale'
 import { useSettingStore } from '@/store/setting'
+import { useLocalStore } from '@/store/setting/local'
 
-const { getComponentsLocale } = useLocale()
 const settingStore = useSettingStore()
+const localStore = useLocalStore()
 </script>
 
 <template>
-  <t-config-provider :global-config="getComponentsLocale">
-    <AppLayout :mode="settingStore.layoutMode" :header="HEADER_CONFIG" />
-  </t-config-provider>
+  <el-config-provider :locale="localStore.elLocals">
+    <AppLayout :mode="settingStore.layoutMode" />
+  </el-config-provider>
 </template>
 
 <style scoped></style>

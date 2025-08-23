@@ -7,6 +7,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": ["element-plus/global"],
     /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true,
@@ -15,5 +16,5 @@
     "erasableSyntaxOnly": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "node_modules/tdesign-vue-next/global.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
