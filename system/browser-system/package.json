@@ -1,0 +1,28 @@
+{
+  "name": "@cloud-drive/browser-system",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/types/main.d.ts",
+      "module": "./dist/main.es.js",
+      "import": "./dist/main.es.js"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/main.es.js",
+  "module": "./dist/main.es.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@cloud-drive/normal-browser": "workspace:*",
+    "@cloud-drive/system-core": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}
