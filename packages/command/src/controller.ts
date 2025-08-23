@@ -24,8 +24,12 @@ class CommandController {
     this.commandMap.set(key, command)
   }
 
-  execute<T>(key: string, ...args: any[]) {
-    return this.commandMap.get(key)?.execute<T>(...args)
+  execute<T>(key: string, ...args: any[]): T {
+    if (!this.commandMap.has(key)) {
+      throw new Error(`Command ${key} is not registered`)
+    }
+
+    return this.commandMap.get(key)?.execute(...args) as unknown as T
   }
 }
 

@@ -1,5 +1,5 @@
-abstract class Receiver {
-  execute<T>(..._args: any[]): T {
+class Receiver {
+  execute(..._args: any[]) {
     throw new Error('Command execute method not implemented.')
   }
 }
@@ -11,8 +11,8 @@ class Command {
     this.receiver = receiver
   }
 
-  execute<T>(...args: any[]): T {
-    return this.receiver.execute<T>(...args)
+  execute(...args: any[]) {
+    return this.receiver.execute(...args)
   }
 }
 
