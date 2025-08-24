@@ -8,7 +8,7 @@ packages:
   - platform/*
 
 catalog:
-  '@tailwindcss/vite': ^4.1.11
+  '@iconify-json/ep': ^1.2.3
   '@vitejs/plugin-vue': ^6.0.0
   '@vue/tsconfig': ^0.7.0
   '@vueuse/core': ^13.6.0
@@ -17,8 +17,8 @@ catalog:
   less: ^4.4.0
   pinia: ^3.0.3
   pinia-plugin-persistedstate: ^4.4.1
-  tailwindcss: ^4.1.11
   typescript: ~5.8.3
+  unocss: ^66.4.2
   vite: ^7.0.4
   vite-plugin-checker: ^0.10.2
   vite-plugin-dts: ^4.5.4

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/ep": "catalog:",
     "@vueuse/core": "catalog:",
     "element-plus": "catalog:",
     "es-toolkit": "catalog:",
@@ -19,11 +20,10 @@
     "vue-router": "catalog:"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/tsconfig": "catalog:",
-    "tailwindcss": "catalog:",
     "typescript": "catalog:",
+    "unocss": "catalog:",
     "vite": "catalog:",
     "vite-plugin-checker": "catalog:",
     "vue-tsc": "catalog:"

@@ -2,6 +2,6 @@
   "recommendations": [
     "Vue.volar",
     "streetsidesoftware.code-spell-checker",
-    "bradlc.vscode-tailwindcss"
+    "antfu.unocss"
   ]
 }

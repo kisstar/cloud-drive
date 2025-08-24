@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
-import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
+import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 
@@ -13,7 +13,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    tailwindcss(),
+    UnoCSS(),
     checker({
       vueTsc: {
         tsconfigPath: 'apps/main-app/tsconfig.app.json',
