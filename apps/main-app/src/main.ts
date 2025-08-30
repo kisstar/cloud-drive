@@ -1,5 +1,5 @@
 import { boot } from '@/boot'
-import 'element-plus/dist/index.css'
+import '@/styles/element/index.scss'
 import 'virtual:uno.css'
 
 boot()

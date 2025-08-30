@@ -10,9 +10,7 @@ import {
 export default defineConfig({
   presets: [
     presetWind4(),
-    presetIcons({
-      scale: 1.2,
-    }),
+    presetIcons(),
     presetAttributify(),
   ],
   transformers: [
