@@ -8,6 +8,14 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  content: {
+    pipeline: {
+      include: [
+        './src/**/*.{html,vue,tsx}',
+        './src/config/nav.ts',
+      ],
+    },
+  },
   presets: [
     presetWind4(),
     presetIcons(),

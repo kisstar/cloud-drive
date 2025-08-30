@@ -1,33 +1,30 @@
 <script lang="ts">
 import type { PropType } from 'vue'
+import type { HeaderNavItem } from '@/types/nav'
 import { defineComponent } from 'vue'
-import CDBrand from '@/layout/header/components/CDBrand.vue'
+import CdBrand from '@/layout/header/components/CdBrand.vue'
 import CdButton from '@/layout/header/components/CdButton.vue'
 import CdDropdown from '@/layout/header/components/CdDropdown.vue'
 import CdThemeMode from '@/layout/header/components/CdThemeMode.vue'
 import CdUserInfo from '@/layout/header/components/CdUserInfo.vue'
 
 interface HeaderProps {
-  leftNavList: {
-    command: string
-    component: string
-    props?: Record<string, unknown>
-  }[]
-  rightNavList: {
-    command: string
-    component: string
-    props?: Record<string, unknown>
-  }[]
+  leftNavList: HeaderNavItem[]
+  rightNavList: HeaderNavItem[]
 }
 
+const components = {
+  CdBrand,
+  CdButton,
+  CdDropdown,
+  CdThemeMode,
+  CdUserInfo,
+}
+
+export type HeaderComponentName = keyof typeof components
+
 export default defineComponent({
-  components: {
-    CDBrand,
-    CdButton,
-    CdDropdown,
-    CdThemeMode,
-    CdUserInfo,
-  },
+  components,
   props: {
     leftNavList: {
       type: Array as PropType<HeaderProps['leftNavList']>,
@@ -45,8 +42,8 @@ export default defineComponent({
     :ellipsis="false"
     class="flex justify-between"
   >
-    <component :is="comp.component" v-for="comp in leftNavList" :key="comp.command" v-bind="comp.props" />
-    <component :is="comp.component" v-for="comp in rightNavList" :key="comp.command" v-bind="comp.props" />
+    <component :is="comp.component" v-for="comp in leftNavList" :key="comp.key" v-bind="comp.props" />
+    <component :is="comp.component" v-for="comp in rightNavList" :key="comp.key" v-bind="comp.props" />
   </el-menu>
 </template>
 
