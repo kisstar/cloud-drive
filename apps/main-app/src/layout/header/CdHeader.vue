@@ -33,6 +33,18 @@ export default defineComponent({
       type: Array as PropType<HeaderProps['rightNavList']>,
     },
   },
+  emits: {
+    nav: (_: HeaderNavItem['props']) => true,
+  },
+  setup(_, { emit }) {
+    function handleNav(navItemOptions: HeaderNavItem['props']) {
+      emit('nav', navItemOptions)
+    }
+
+    return {
+      handleNav,
+    }
+  },
 })
 </script>
 
@@ -42,8 +54,20 @@ export default defineComponent({
     :ellipsis="false"
     class="flex justify-between"
   >
-    <component :is="comp.component" v-for="comp in leftNavList" :key="comp.key" v-bind="comp.props" />
-    <component :is="comp.component" v-for="comp in rightNavList" :key="comp.key" v-bind="comp.props" />
+    <component
+      :is="comp.component"
+      v-for="comp in leftNavList"
+      :key="comp.key"
+      v-bind="comp.props"
+      @nav="handleNav"
+    />
+    <component
+      :is="comp.component"
+      v-for="comp in rightNavList"
+      :key="comp.key"
+      v-bind="comp.props"
+      @nav="handleNav"
+    />
   </el-menu>
 </template>
 

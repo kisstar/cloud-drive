@@ -6,6 +6,9 @@ export type HeaderCommandName = CommandName | (string & {})
 export interface HeaderNavItem {
   key: string
   component: HeaderComponentName
-  props?: Record<string, unknown>
-  command?: HeaderCommandName
+  props?: {
+    command?: HeaderCommandName
+    [key: string]: unknown
+  }
+
 }

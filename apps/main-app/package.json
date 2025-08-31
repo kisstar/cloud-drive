@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloud-drive/browser-system": "workspace:*",
+    "@cloud-drive/system-core": "workspace:*",
     "@vueuse/core": "catalog:",
     "element-plus": "catalog:",
     "es-toolkit": "catalog:",

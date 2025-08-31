@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { LayoutMode } from '@/types/setting'
-import { HEADER_LEFT_NAV_LIST, HEADER_RIGHT_NAV_LIST } from '@/config/nav'
+import { useHeaderNav } from '@/config/nav'
+import { handleNav } from '@/layout/handleNav'
 import CdHeader from '@/layout/header/CdHeader.vue'
 
 interface LayoutProps {
@@ -8,13 +9,15 @@ interface LayoutProps {
 }
 
 defineProps<LayoutProps>()
+
+const { leftNavList, rightNavList } = useHeaderNav()
 </script>
 
 <template>
   <!-- 1-column -->
   <el-container v-if="mode === '1-column'">
     <el-header>
-      <CdHeader :left-nav-list="HEADER_LEFT_NAV_LIST" :right-nav-list="HEADER_RIGHT_NAV_LIST" />
+      <CdHeader :left-nav-list="leftNavList" :right-nav-list="rightNavList" @nav="handleNav" />
     </el-header>
     <el-main>Main</el-main>
     <el-footer>Footer</el-footer>
@@ -23,7 +26,7 @@ defineProps<LayoutProps>()
   <!-- 2-column -->
   <el-container v-else-if="mode === '2-column'">
     <el-header>
-      <CdHeader :left-nav-list="HEADER_LEFT_NAV_LIST" :right-nav-list="HEADER_RIGHT_NAV_LIST" />
+      <CdHeader :left-nav-list="leftNavList" :right-nav-list="rightNavList" @nav="handleNav" />
     </el-header>
     <el-container>
       <el-aside width="200px">
@@ -39,7 +42,7 @@ defineProps<LayoutProps>()
   <!-- 3-column -->
   <el-container v-else>
     <el-header>
-      <CdHeader :left-nav-list="HEADER_LEFT_NAV_LIST" :right-nav-list="HEADER_RIGHT_NAV_LIST" />
+      <CdHeader :left-nav-list="leftNavList" :right-nav-list="rightNavList" @nav="handleNav" />
     </el-header>
     <el-container>
       <el-aside width="200px">
