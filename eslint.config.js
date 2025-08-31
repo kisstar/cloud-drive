@@ -16,6 +16,6 @@ export default antfu(
         }],
       },
     },
-    unocss: true,
+    // unocss: true,
   },
 )

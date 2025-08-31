@@ -34,17 +34,18 @@ function useHeaderNav() {
         props: {
           class: 'flex justify-center items-center pl-4',
           icon: 'i-ic-baseline-translate',
+          command: COMMAND_NAME.CHANGE_LANG,
           list: langList,
         },
       },
-      {
-        key: 'setting',
-        component: 'CdButton',
-        props: {
-          class: 'flex justify-center items-center pl-4',
-          icon: 'i-ep-setting',
-        },
-      },
+      // {
+      //   key: 'setting',
+      //   component: 'CdButton',
+      //   props: {
+      //     class: 'flex justify-center items-center pl-4',
+      //     icon: 'i-ep-setting',
+      //   },
+      // },
       {
         key: 'user',
         component: 'CdUserInfo',

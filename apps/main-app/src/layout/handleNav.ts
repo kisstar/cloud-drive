@@ -15,6 +15,13 @@ function handleNav(navItemOptions: HeaderNavItem['props']) {
           ctx.commandController.execute(navItemOptions.command, themeMode)
         }
         break
+      case COMMAND_NAME.CHANGE_LANG:
+        {
+          const lang = navItemOptions.value
+
+          ctx.commandController.execute(navItemOptions.command, lang)
+        }
+        break
       default:
         break
     }
