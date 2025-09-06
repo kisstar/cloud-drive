@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { h } from 'vue'
 
-interface Props {
+interface CdThemeModeProps {
   command?: string
   value?: boolean
 }
 
-const props = defineProps<Props>()
+const props = defineProps<CdThemeModeProps>()
 const emit = defineEmits<{
-  (e: 'nav', value: Props): void
+  (e: 'nav', value: CdThemeModeProps): void
 }>()
 
 function handleChange(value: string | number | boolean) {

@@ -12,13 +12,17 @@ export default defineConfig({
     pipeline: {
       include: [
         './src/**/*.{html,vue,tsx}',
-        './src/config/nav.ts',
+        './src/composables/useHeaderNav.ts',
+        './src/composables/useAsideNav.ts',
       ],
     },
   },
   presets: [
     presetWind4(),
-    presetIcons(),
+    presetIcons({
+      scale: 1.2,
+      warn: true,
+    }),
     presetAttributify(),
   ],
   transformers: [
