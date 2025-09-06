@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { LayoutMode } from '@/types/setting'
 import { useAsideNav } from '@/composables/useAsideNav'
+import { useAsideSubNav } from '@/composables/useAsideSubNav'
 import { useHeaderNav } from '@/composables/useHeaderNav'
 import CdAsideNav from '@/layout/aside/CdAsideNav.vue'
 import CdAsideSubNav from '@/layout/aside/CdAsideSubNav.vue'
@@ -15,6 +16,7 @@ defineProps<LayoutProps>()
 
 const { leftNavList, rightNavList } = useHeaderNav()
 const { topNavList, bottomNavList } = useAsideNav()
+const { topNavList: subTopNavList, bottomNavList: subBottomNavList } = useAsideSubNav()
 </script>
 
 <template>
@@ -37,7 +39,7 @@ const { topNavList, bottomNavList } = useAsideNav()
         <CdAsideNav :top-nav-list="topNavList" :bottom-nav-list="bottomNavList" />
       </el-aside>
       <el-aside width="177px">
-        <CdAsideSubNav />
+        <CdAsideSubNav :top-nav-list="subTopNavList" :bottom-nav-list="subBottomNavList" />
       </el-aside>
       <el-container>
         <el-main>Main</el-main>
