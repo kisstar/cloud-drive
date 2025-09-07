@@ -5,6 +5,7 @@ import { useContext } from '@/boot/context'
 import { registerCommands } from '@/commands'
 import { globalComponents } from '@/global-components'
 import { i18n } from '@/locales'
+import { router } from '@/router'
 import { pinia } from '@/store'
 
 async function boot() {
@@ -13,6 +14,7 @@ async function boot() {
 
   registerCommands(ctx)
 
+  app.use(router)
   app.use(pinia)
   app.use(i18n)
   app.use(globalComponents)

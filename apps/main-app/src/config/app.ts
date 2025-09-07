@@ -1,5 +1,7 @@
 import type { Lang, LayoutMode, ThemeMode } from '@/types/setting'
 
+export const BASE_URL = '/disk/'
+
 export const DEFAULT_LANG: Lang = 'zh-CN'
 
 export const DEFAULT_THEME: ThemeMode = 'light'
