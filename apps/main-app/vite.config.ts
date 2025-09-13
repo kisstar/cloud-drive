@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import { mockServer } from '@cloud-drive/vite-plugin-mock'
 import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
@@ -18,6 +19,14 @@ export default defineConfig({
       vueTsc: {
         tsconfigPath: 'apps/main-app/tsconfig.app.json',
       },
+    }),
+    mockServer({
+      rules: [
+        {
+          match: /^\/api/,
+          pathname: pathname => pathname.slice('/api'.length),
+        },
+      ],
     }),
   ],
 })

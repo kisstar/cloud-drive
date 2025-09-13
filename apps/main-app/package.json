@@ -23,6 +23,7 @@
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@cloud-drive/vite-plugin-mock": "workspace:*",
     "@iconify-json/ep": "catalog:",
     "@iconify-json/ic": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
