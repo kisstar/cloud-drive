@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@cloud-drive/browser-system": "workspace:*",
+    "@cloud-drive/fff": "workspace:*",
     "@cloud-drive/system-core": "workspace:*",
+    "@tanstack/vue-query": "catalog:",
     "@vueuse/core": "catalog:",
     "element-plus": "catalog:",
     "es-toolkit": "catalog:",

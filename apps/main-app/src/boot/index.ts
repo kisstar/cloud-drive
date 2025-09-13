@@ -1,3 +1,4 @@
+import { VueQueryPlugin } from '@tanstack/vue-query'
 import ElementPlus from 'element-plus'
 import { createApp } from 'vue'
 import App from '@/App.vue'
@@ -19,6 +20,7 @@ async function boot() {
   app.use(i18n)
   app.use(globalComponents)
   app.use(ElementPlus)
+  app.use(VueQueryPlugin)
   app.mount('#app')
 }
 

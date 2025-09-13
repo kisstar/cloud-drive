@@ -10,9 +10,11 @@ packages:
 catalog:
   '@iconify-json/ep': 1.2.3
   '@iconify-json/ic': ^1.2.4
+  '@tanstack/vue-query': ^5.87.1
   '@vitejs/plugin-vue': ^6.0.0
   '@vue/tsconfig': ^0.7.0
   '@vueuse/core': ^13.6.0
+  axios: ^1.11.0
   element-plus: ^2.11.1
   es-toolkit: ^1.39.8
   less: ^4.4.0

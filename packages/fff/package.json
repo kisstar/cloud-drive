@@ -17,6 +17,9 @@
     "build": "vite build",
     "dev": "vite build --watch"
   },
+  "dependencies": {
+    "axios": "catalog:"
+  },
   "devDependencies": {
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:"

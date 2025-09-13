@@ -1,1 +1,2 @@
-export { CATEGORY, type FileInfo } from '@/core/file'
+export { fileApi } from '@/api/file'
+export { CATEGORY, type FileInfo } from '@/types/file'
