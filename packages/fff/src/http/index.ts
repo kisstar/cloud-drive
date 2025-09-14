@@ -1,12 +1,6 @@
-import axios from 'axios'
+import { request as httpClient } from '@/http/instance'
+import { Request } from '@/http/request'
 
-const request = axios.create({
-  timeout: 60 * 1000,
-  headers: {
-    post: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  },
-})
+const request = new Request(httpClient)
 
 export { request }

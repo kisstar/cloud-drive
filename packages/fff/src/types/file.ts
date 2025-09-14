@@ -11,8 +11,9 @@ export interface FileInfo {
   id: string
   category: (typeof CATEGORY)[keyof typeof CATEGORY]
   name: string
-  thumbnail?: string
+  path: string
   size: number
+  thumbnail?: string
   created_at: number
   updated_at: number
 }
