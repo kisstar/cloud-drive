@@ -23,7 +23,7 @@ const { topNavList: subTopNavList, bottomNavList: subBottomNavList } = useAsideS
   </el-container>
 
   <!-- 2-column -->
-  <el-container v-else-if="settingStore.layoutMode === '2-column'">
+  <el-container v-else-if="settingStore.layoutMode === '2-column'" class="h-full">
     <el-header>
       <router-view
         :name="ROUTER_VIEW.HEADER"

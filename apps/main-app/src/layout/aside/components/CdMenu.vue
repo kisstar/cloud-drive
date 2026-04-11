@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <el-menu collapse>
+  <el-menu collapse class="h-full">
     <el-menu-item v-for="item in list" :key="item.key" :index="item.key">
       <div class="flex flex-col justify-center items-center text-xs">
         <span :class="item.icon" />

@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <el-menu>
+  <el-menu class="h-full">
     <template v-for="menuItem in list">
       <!-- menu item -->
       <el-menu-item v-if="!menuItem.children" :key="menuItem.key" :index="menuItem.text">
